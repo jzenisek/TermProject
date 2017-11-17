@@ -11,6 +11,6 @@ IMPORTANT THINGS!!!! :
 * Compile SDK version is API 26 Android 8.0 (Oreo)
 * Min SDK is 15
 * I've been emulating through Android Studio. The virtual device I've been using is a Nexus 5C API 27
-* To open the project, download and copy the zip into a workspace folder on your computer. Then, in Android Studio > File > Open > .../Christmas2
-* To imort settings > File > Import settings... > .../settings.jar
-* To upload updated project > File > Close project. Then upload the Christmas2 from wherever you put it originally.
+* To open the project, In Android Studio > File > Open > your_repository/Christmas2
+* To import settings > File > Import settings... > .../settings.jar
+* To save your work > CLOSE project in file > close, and then push the repo
