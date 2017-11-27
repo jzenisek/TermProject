@@ -1,3 +1,9 @@
+/**
+ * @file ChristmasNotificationReceiver.java 
+ * @brief sets up the ChristmasNotificationReceiver class
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.app.Notification;
@@ -27,7 +33,11 @@ public class ChristmasNotificationReceiver extends BroadcastReceiver {
 		
 		Log.i(Christmas.TAG, "Notified of Christmas. Answer: " + answer);
 	}
-	
+	/// @brief recieves the notification
+	/// @param String title
+	/// @param String answer
+	/// @param Context context
+	/// @return a private Notification value
 	private Notification getNotification(String title, String answer, Context context) {
 		int icon = R.drawable.notification;
 		long when = System.currentTimeMillis();
@@ -60,7 +70,10 @@ public class ChristmasNotificationReceiver extends BroadcastReceiver {
 		
 		return notification;
 	}
-	
+	/// @brief builds the display
+	/// @param Context context
+	/// @param String answer
+	/// @return a RemoteViews value
 	public static RemoteViews buildView(Context context, String answer) {
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.notification);
         views.setTextViewText(R.id.answer, answer);

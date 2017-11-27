@@ -1,3 +1,10 @@
+/**
+ * @file Christmas.java 
+ * @brief finds the language and sets up the class Christmas
+ * 
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.text.format.Time;
@@ -13,7 +20,9 @@ public class Christmas {
 	public static int answer(boolean isIt, Locale locale) {
 		return isIt ? yes(locale) : no(locale); 
 	}
-	
+	/// @brief sets current time and checks if it is Christmas
+	/// @param none
+	/// @return true/false (boolean)
 	public static boolean isIt() {
 		Time now = new Time();
 		now.set(System.currentTimeMillis());
@@ -21,6 +30,9 @@ public class Christmas {
 	}
 	
 	// returns the epoch-based time of the next Christmas, at midnight, in milliseconds
+	/// @brief returns the time when it is Christmas next
+	/// @param none
+	/// @return the time when it is Christmas next
 	public static long time() {
 		Time now = new Time();
 		now.setToNow();
@@ -34,7 +46,9 @@ public class Christmas {
 		
 		return christmas.toMillis(false);
 	}
-	
+	/// @brief finds the language
+	/// @param Locale locale
+	/// @return an integar referring to the language being used
 	public static int yes(Locale locale) {
 		String country = locale.getCountry();
 		String language = locale.getLanguage();
@@ -101,7 +115,9 @@ public class Christmas {
 							
 		return R.string.default_yes;
 	}
-	
+	/// @brief finds the language that it is not
+	/// @param Locale locale
+	/// @return an integar referring to the language that it is not
 	public static int no(Locale locale) {
 		String country = locale.getCountry();
 		String language = locale.getLanguage();

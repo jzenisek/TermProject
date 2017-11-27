@@ -1,3 +1,9 @@
+/**
+ * @file ChristmasWidgetReceiver 
+ * @brief sets up the ChristmasWidgerReceiver class
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.appwidget.AppWidgetManager;

@@ -1,3 +1,10 @@
+/**
+ * @file ChristmasPreferences.java 
+ * @brief sets up the class PreferenceActivity
+ * 
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.media.RingtoneManager;
@@ -34,7 +41,9 @@ public class ChristmasPreferences extends PreferenceActivity {
 		
 		setupControls();
 	}
-		
+	/// @brief Sets up all the preferences for the app
+	/// @param none
+	/// @return none
 	public void setupControls() {
 		beginningInterval = PreferenceManager.getDefaultSharedPreferences(this).getString(RECURRING_INTERVAL_KEY, RECURRING_INTERVAL_DEFAULT);
 		
@@ -42,6 +51,10 @@ public class ChristmasPreferences extends PreferenceActivity {
 		updateRingtoneSummary(PreferenceManager.getDefaultSharedPreferences(this).getString(RINGTONE_KEY, null));
 		
 		// schedule/cancel single Christmas alarm based on whether preference is checked
+		/// @brief lets the user set a preference for the Christmas Alarm
+		/// @param Preference preference
+		/// @param Object newValue
+		/// @return true/false
 		findPreference(SINGLE_ENABLED_KEY).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -55,6 +68,10 @@ public class ChristmasPreferences extends PreferenceActivity {
 		});
 		
 		// schedule/cancel recurring Christmas alarm based on whether preference is checked
+		/// @brief lets the user set a preference for the Recurring Alarm
+		/// @param Preference preference
+		/// @param Object newValue
+		/// @return true/false
 		findPreference(RECURRING_ENABLED_KEY).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -69,6 +86,10 @@ public class ChristmasPreferences extends PreferenceActivity {
 		});
 		
 		// reschedule recurring Christmas alarm when interval changes
+		/// @brief lets the user set a preference for the Reucurring interval Alarm
+		/// @param Preference preference
+		/// @param Object newValue
+		/// @return true/false
 		findPreference(RECURRING_INTERVAL_KEY).setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -92,11 +113,15 @@ public class ChristmasPreferences extends PreferenceActivity {
 			}
 		});
 	}
-	
+	/// @brief updates the interval value
+	/// @param String value
+	/// @return none
 	private void updateIntervalSummary(String value) {
 		findPreference(RECURRING_INTERVAL_KEY).setSummary(codeToName(value));
 	}
-	
+	/// @brief updates the ringtones
+	/// @param String uri
+	/// @return none
 	private void updateRingtoneSummary(String uri) {
 		String summary;
 		
@@ -107,7 +132,6 @@ public class ChristmasPreferences extends PreferenceActivity {
 		
 		findPreference(RINGTONE_KEY).setSummary(summary);
 	}
-	
 	private String codeToName(String code) {
 		String[] codes = getResources().getStringArray(R.array.notify_recurring_interval_values);
 		String[] names = getResources().getStringArray(R.array.notify_recurring_interval_names);

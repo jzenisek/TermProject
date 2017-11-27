@@ -1,3 +1,10 @@
+/**
+ * @file ChristmasBootReceiver.java
+ * @brief sets up the class BroadcastReceiver
+ * 
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.content.BroadcastReceiver;

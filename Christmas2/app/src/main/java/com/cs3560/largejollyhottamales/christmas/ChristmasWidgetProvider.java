@@ -1,3 +1,10 @@
+/**
+ * @file ChristmasWidgetProvider.java
+ * @brief sets up the AppWidgetProvider class
+ * 
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.app.AlarmManager;

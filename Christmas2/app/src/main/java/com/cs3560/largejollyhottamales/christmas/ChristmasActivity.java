@@ -1,3 +1,10 @@
+/**
+ * @file ChristmasActivity.java 
+ * @brief sets up the Christmas Activty class
+ * 
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.app.Activity;
@@ -26,7 +33,9 @@ public class ChristmasActivity extends Activity {
         // will cancel and re-schedule all alarms when the user opens the app
         ChristmasAlarm.setEnabledAlarms(this);
     }
-    
+    /// @brief finds out if it is Christmas
+    /// @param none
+    /// @return none
     public void isItChristmas() {
     	((TextView) findViewById(R.id.answer)).setText(Christmas.answer(Christmas.isIt(), Locale.getDefault()));
     }
@@ -37,7 +46,9 @@ public class ChristmasActivity extends Activity {
     		isItChristmas();
     	}
     };
-    
+    /// @brief sets the local alarm
+    /// @param none
+    /// @return none
     public void setLocalAlarm() {
     	Thread alarm = new Thread() {
     		public void run() {
@@ -53,12 +64,16 @@ public class ChristmasActivity extends Activity {
     	};
     	alarm.start();
     }
-
+	/// @brief updates the CountdownActivity class
+	/// @param View view
+	/// @return none
     public void goToCountdown (View view){
 		Intent intent = new Intent (this, CountdownActivity.class);
 		startActivity(intent);
 	}
-
+	/// @brief updates the SupportActivity class
+	/// @param View view
+	/// @return none
 	public void goToSupport (View view){
 		Intent intent = new Intent (this, SupportActivity.class);
 		startActivity(intent);

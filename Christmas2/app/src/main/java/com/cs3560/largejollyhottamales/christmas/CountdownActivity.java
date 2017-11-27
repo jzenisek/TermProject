@@ -1,3 +1,9 @@
+/**
+ * @file CountdownActivity.java 
+ * @brief sets up the countdown class for the app
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.os.Bundle;

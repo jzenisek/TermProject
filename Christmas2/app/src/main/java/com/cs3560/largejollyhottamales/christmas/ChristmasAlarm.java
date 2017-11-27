@@ -1,3 +1,9 @@
+/**
+ * @file ChristmasAlarm.java 
+ * @brief sets up the Christmas Alarm class
+ * 
+ */
+ 
 package com.cs3560.largejollyhottamales.christmas;
 
 import android.app.AlarmManager;
@@ -11,7 +17,9 @@ import android.text.format.Time;
 import android.util.Log;
 
 public class ChristmasAlarm {
-	
+	/// @brief sets up all enabled alarms
+	/// @param Context context
+	/// @return none
 	public static void setEnabledAlarms(Context context) {
 		if (singleEnabled(context))
 			setChristmasAlarm(context);
@@ -19,7 +27,9 @@ public class ChristmasAlarm {
 		if (recurringEnabled(context))
 			setRecurringAlarm(context);
 	}
-	
+	/// @brief sets the Christmas alarm
+	/// @param Context context
+	/// @return none
 	public static void setChristmasAlarm(Context context) {
 		long time = Christmas.time();
 		
@@ -34,7 +44,9 @@ public class ChristmasAlarm {
 	    
 	    Log.d(Christmas.TAG, "Scheduled single Christmas alarm for " + formatTime(time));
 	}
-	
+	/// @brief cancels the Christmas alarm
+	/// @param Context context
+	/// @return none
 	public static void cancelChristmasAlarm(Context context) {
 		AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		PendingIntent alarmIntent = singleAlarmIntent(context);
@@ -42,11 +54,16 @@ public class ChristmasAlarm {
 	    
 	    Log.d(Christmas.TAG, "Canceled single Christmas alarm");
 	}
-	
+	/// @brief sets recurring alarm
+	/// @param Context context
+	/// @return none
 	public static void setRecurringAlarm(Context context) {
 		setRecurringAlarm(context, getInterval(context));
 	}
-	
+	/// @brief sets recurring alarm with an interval value
+	/// @param Context context
+	/// @param String intervalValue
+	/// @reuturn none
 	public static void setRecurringAlarm(Context context, String intervalValue) {
 		long time = firstRecurringTime(intervalValue);
 		long interval = getIntervalMillis(intervalValue);
@@ -68,7 +85,9 @@ public class ChristmasAlarm {
 		
 		Log.d(Christmas.TAG, "Scheduled recurring Christmas alarm for " + formatTime(time));
 	}
-	
+	/// @brief cancels recurring alarm
+	/// @param Context context
+	/// @return none
 	public static void cancelRecurringAlarm(Context context) {
 		AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		PendingIntent alarmIntent = recurringAlarmIntent(context);
