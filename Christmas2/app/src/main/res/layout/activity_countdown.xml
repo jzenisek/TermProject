@@ -13,6 +13,4 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_countdown" />
-
 </android.support.design.widget.CoordinatorLayout>
