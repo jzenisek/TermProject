@@ -35,6 +35,51 @@ public class Christmas {
 		return christmas.toMillis(false);
 	}
 	
+	public static int countdown() {
+		Time now = new Time();
+		now.set(System.currentTimeMillis());
+		int days; //days until Christmas
+		
+		if (now.month == 0)
+			days = (31 - now.monthDay) + 334;
+		if (now.month == 1)
+			days = (28 - now.monthDay) + 306;
+		if (now.month == 2)
+			days = (31 - now.monthDay) + 275;
+		if (now.month == 3)
+			days = (30 - now.monthDay) + 245;
+		if (now.month == 4)
+			days = (31 - now.monthDay) + 214;
+		if (now.month == 5)
+			days = (30 - now.monthDay) + 184;
+		if (now.month == 6)
+			days = (31 - now.monthDay) + 153;
+		if (now.month == 7)
+			days = (31 - now.monthDay) + 122;
+		if (now.month == 8)
+			days = (30 - now.monthDay) + 92;
+		if (now.month == 9)
+			days = (31 - now.monthDay) + 61;
+		if (now.month == 10)
+			days = (30 - now.monthDay) + 31;
+		
+		//for leap year
+		if (now.year % 4 == 0)
+			days = days + 1;
+		
+		if (now.month == 11){
+			if (now.monthDay < 25)
+				days = 25 - now.monthDay;
+			else{
+				days = (31 - now.monthDay) + 359;
+				if (now.year % 4 == 0)
+					days = days + 1;
+			}
+		}
+		
+		return days;
+	}
+	
 	public static int yes(Locale locale) {
 		String country = locale.getCountry();
 		String language = locale.getLanguage();
